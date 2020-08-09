@@ -1,0 +1,16 @@
+<div>
+    <label [for]="id">
+        {{ label }} 
+        <span *ngIf="this.required" class="text-danger">*</span>
+    </label>
+    <div class="hint">
+        <input 
+            type="date" 
+            [id]="id" 
+            [ngClass]="{'b-error': errors.length > 0}"
+            [name]="name" 
+            [(ngModel)]="value" 
+            (input)="emitValue($event.target.value)">
+        <span *ngFor="let error of errors">{{ error }}</span>
+    </div>
+</div>

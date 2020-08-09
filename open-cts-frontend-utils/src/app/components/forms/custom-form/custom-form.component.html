@@ -1,0 +1,33 @@
+<form enctype="multipart/form-data">
+    <app-text-input *ngFor="let textEl of textInputs" [name]="textEl.name" [label]="textEl.label" [id]="textEl.id"
+        [required]="textEl.required" [min]="textEl.min" [max]="textEl.max" (getValue)="setValue($event, textEl)"
+        [placeholder]="textEl.placeholder ? textEl.placeholder: ''"></app-text-input>
+
+    <app-email-input *ngFor="let textEl of textEmails" [label]="textEl.label" [id]="textEl.id"
+        [required]="textEl.required" [name]="textEl.name" (getValue)="setValue($event, textEl)"
+        [placeholder]="textEl.placeholder ? textEl.placeholder: ''">
+    </app-email-input>
+
+    <app-number-input *ngFor="let textEl of textNumbers" [label]="textEl.label" [id]="textEl.id"
+        [required]="textEl.required" [min]="textEl.min" [max]="textEl.max" [name]="textEl.name"
+        (getValue)="setValue($event, textEl)" [placeholder]="textEl.placeholder ? textEl.placeholder: ''">
+    </app-number-input>
+
+    <app-password-input *ngFor="let textEl of textPasswords" [label]="textEl.label" [id]="textEl.id"
+        [required]="textEl.required" [name]="textEl.name" (getValue)="setValue($event, textEl)"
+        [placeholder]="textEl.placeholder ? textEl.placeholder: ''"></app-password-input>
+
+    <app-textarea *ngFor="let textEl of textAreas" [label]="textEl.label" [id]="textEl.id" [required]="textEl.required"
+        [min]="textEl.min" [max]="textEl.max" [placeholder]="textEl.placeholder ? textEl.placeholder: ''">
+    </app-textarea>
+
+    <app-date-input *ngFor="let textEl of textDates" [label]="textEl.label" [id]="textEl.id"
+        [required]="textEl.required"></app-date-input>
+
+    <app-file-input *ngFor="let textEl of textFiles" [label]="textEl.label" [id]="textEl.id">
+    </app-file-input>
+
+
+    <app-select *ngFor="let textEl of textSelects" [label]="textEl.label" [id]="textEl.id" [required]="textEl.required"
+        [data]="textEl.data" [name]="textEl.name" (getValue)="setValue($event, textEl)"></app-select>
+</form>

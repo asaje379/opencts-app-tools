@@ -1,0 +1,4 @@
+<div class="p-4">
+    <input type="file" #input style="display: none;" (change)="pick($event.target.files[0])">
+    <button (click)="input.click()">Parcourir</button>
+</div>

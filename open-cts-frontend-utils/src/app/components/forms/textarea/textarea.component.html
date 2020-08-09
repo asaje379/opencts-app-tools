@@ -1,0 +1,18 @@
+<div>
+    <label [for]="id">
+        {{ label }} 
+        <span *ngIf="this.required" class="text-danger">*</span>
+    </label>
+    <div class="hint">
+        <textarea 
+            rows="5"
+            [id]="id" 
+            [name]="name" 
+            [placeholder]="placeholder"
+            [(ngModel)]="value" 
+            [ngClass]="{'b-error': errors.length > 0}"
+            (input)="emitValue($event.target.value)">
+        </textarea>
+        <span *ngFor="let error of errors">{{ error }}</span>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+{
+    "flash": {
+        "bad_file_error": "Le format de fichier est incorrect"
+    }, 
+    "register": {
+        "title": "Enregistrement",
+        "username": "Identifiant",
+        "password": "Mot de passe",
+        "role": "Rôle"
+    },
+    "forms": {
+        "file": {
+            "browse": "Parcourir"
+        }
+    }
+}

@@ -1,0 +1,21 @@
+<div>
+    <label [for]="id">
+        {{ label }}
+        <span *ngIf="this.required" class="text-danger">*</span>
+    </label>
+    <div class="hint">
+        <select [name]="name" [id]="id" *ngIf="!key" [(ngModel)]="value" [ngClass]="{'b-error': errors.length > 0}"
+            (change)="emitValue($event.target.value)">
+            <option *ngFor="let d of data" [value]="d">
+                {{ d }}
+            </option>
+        </select>
+        <select [name]="name" [id]="id" *ngIf="key" [(ngModel)]="value" [ngClass]="{'b-error': errors.length > 0}"
+            (change)="emitValue($event.target.value)">
+            <option *ngFor="let d of data" [value]="d.key">
+                {{ d.option }}
+            </option>
+        </select>
+        <span *ngFor="let error of errors">{{ error }}</span>
+    </div>
+</div>

@@ -1,0 +1,39 @@
+<select (change)="translate($event.target.value)">
+    <option value="fr">fr</option>
+    <option value="en">en</option>
+</select>
+
+<h1>{{ lang_features.title }}</h1>
+
+<app-custom-form [model]="{
+    username: {
+        label: lang_features.username,
+        type: 'text',
+        min: '4',
+        required: true,
+        name: 'username'
+    }, 
+    password: {
+        label: lang_features.password,
+        type: 'password',
+        min: '4',
+        name: 'password',
+        required: true
+    },
+    role: {
+        label: lang_features.role,
+        type: 'select',
+        name: 'role',
+        required: true,
+        data: [
+            'SuperAdmin', 'Admin', 'Arme-Manage', 
+            'Vehicule-Manage', 'General-Manage', 'Munition-Manage'
+        ]
+    },
+    photo: {
+        label: 'Photo',
+        type: 'file',
+        accepted: 'png, jpeg, jpg',
+        name: 'file'
+    }
+}"></app-custom-form>

@@ -1,0 +1,19 @@
+.hint {
+    display: flex;
+    flex-direction: column;
+
+    span {
+        font-size: 0.7em;
+        color: red;
+    }
+}
+
+.b-error {
+    border: solid 0.5px red;
+    border-radius: 5px;
+    outline: none;
+}
+
+.b-error:focus {
+    outline: none;
+}
